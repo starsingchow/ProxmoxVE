@@ -21,7 +21,9 @@ wget -q https://github.com/milvus-io/milvus/releases/download/v2.3.10/milvus_2.3
 wget -q https://github.com/zilliztech/attu/releases/download/v2.4.9/attu_2.4.9_amd64.deb
 $STD apt-get update
 $STD dpkg -i milvus_2.3.10-1_amd64.deb
-$STD dpkg -i attu_2.4.9_amd64.deb 2>/dev/null
+if $STD dpkg -i attu_2.4.9_amd64.deb &>/dev/null; then msg_ok "attu install success"; else
+    msg_ok "attu install failed, install missing dependencies later"
+fi
 $STD apt-get -f install
 $STD rm milvus_2.3.10-1_amd64.deb
 $STD rm attu_2.4.9_amd64.deb

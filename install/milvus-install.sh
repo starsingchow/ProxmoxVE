@@ -16,10 +16,11 @@ $STD apt-get install -y mc
 msg_ok "Installed Dependencies"
 
 msg_info "Installing milvus (patience)"
-wget -qO- https://github.com/milvus-io/milvus/releases/download/v2.3.10/milvus_2.3.10-1_amd64.deb
+wget -q https://github.com/milvus-io/milvus/releases/download/v2.3.10/milvus_2.3.10-1_amd64.deb
 $STD apt-get update
 $STD dpkg -i milvus_2.3.10-1_amd64.deb
 $STD apt-get -f install
+$STD rm milvus_2.3.10-1_amd64.deb
 msg_ok "Installed milvus"
 
 motd_ssh

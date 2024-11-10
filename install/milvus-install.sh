@@ -13,6 +13,7 @@ $STD apt-get install -y curl
 $STD apt-get install -y net-tools
 $STD apt-get install -y sudo
 $STD apt-get install -y mc
+$STD apt-get install -y libaio-dev
 msg_ok "Installed Dependencies"
 
 msg_info "Installing milvus (patience)"
